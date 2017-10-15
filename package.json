@@ -1,0 +1,20 @@
+{
+  "name": "moroz",
+  "version": "0.0.0",
+  "description": "Realy COOL deepFreeze",
+  "main": "index.js",
+  "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
+  "scripts": {
+    "test": "eslint . && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astur/moroz.git"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "eslint": "^4.7.2",
+    "eslint-config-astur": "0.0.2"
+  },
+  "license": "MIT"
+}
