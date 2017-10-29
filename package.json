@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/astur/moroz.git"
   },
+  "dependencies": {
+    "get-props": "^1.0.0"
+  },
   "devDependencies": {
     "ava": "^0.22.0",
     "eslint": "^4.7.2",
