@@ -1,4 +1,4 @@
-const deepFreeze = require('get-props');
+const getProps = require('get-props');
 
 module.exports = o => {
     const frozen = new Set();
@@ -7,7 +7,7 @@ module.exports = o => {
         Object.freeze(o);
         frozen.add(o);
         const isF = typeof o === 'function';
-        deepFreeze(o, {protos: true, symbols: true})
+        getProps(o, {protos: true, symbols: true})
             .filter(v => !isF || !['caller', 'callee', 'arguments'].includes(v))
             .filter(v => o[v] !== null)
             .filter(v => ['object', 'function'].includes(typeof o[v]))
