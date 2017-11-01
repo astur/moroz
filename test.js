@@ -122,15 +122,20 @@ test('Frozen nested nodes', t => {
 
 test('prototype chain', t => {
     const F = function(){
-        this.field = 1;
+        this.field = {a: {}};
     };
-    F.prototype.staticField = {};
+    F.prototype.staticField = {x: {}};
     const item = new F();
     const o = Object.create(item);
     t.notThrows(() => deepFreeze(o));
     t.true(Object.isFrozen(o));
     t.true(Object.isFrozen(o.field));
+    t.true(Object.isFrozen(o.field.a));
+    t.false(Object.isFrozen(item));
+    t.true(Object.isFrozen(item.field));
+    t.true(Object.isFrozen(item.field.a));
     t.false(Object.isFrozen(o.staticField));
+    t.false(Object.isFrozen(o.staticField.x));
     t.false(Object.isFrozen(o.toLocaleString));
     t.false(Object.isFrozen(Object.toLocaleString));
 });
