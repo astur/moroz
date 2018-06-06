@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/astur/moroz.git"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "get-props": "^1.0.1"
   },
