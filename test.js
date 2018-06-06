@@ -65,8 +65,11 @@ test('circular reference', t => {
 test('function', t => {
     const f = function(){};
     const fP = Object.getPrototypeOf(f);
+    f.callee = {why: 'for old functions'};
     t.notThrows(() => deepFreeze(fP));
+    t.notThrows(() => deepFreeze(f));
     t.true(Object.isFrozen(fP));
+    t.false(Object.isFrozen(f.callee));
 });
 
 test('pure object', t => {
