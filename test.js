@@ -1,3 +1,4 @@
+/* eslint no-empty-function: off */
 const test = require('ava');
 const deepFreeze = require('.');
 
